@@ -10,7 +10,6 @@
     Data Analyst Portfolio
     </title>
 
-    <!-- Google Fonts -->
     <link
     href="https://fonts.googleapis.com/css2?
     family=Poppins:wght@300;400;500;600;700;800
@@ -18,7 +17,6 @@
     &display=swap"
     rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/
@@ -60,7 +58,7 @@
 }
 
 /* ==================
-   RESET & BASE
+   RESET AND BASE
    ================== */
 * {
     margin: 0;
@@ -84,9 +82,7 @@ body {
 /* ==================
    SCROLLBAR
    ================== */
-::-webkit-scrollbar {
-    width: 6px;
-}
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track {
     background: var(--bg-primary);
 }
@@ -185,24 +181,20 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(
-        ellipse 80% 60%
+        radial-gradient(ellipse 80% 60%
         at 50% 50%,
         rgba(0, 128, 255, 0.06) 0%,
         transparent 70%),
-        radial-gradient(
-        ellipse 40% 40%
+        radial-gradient(ellipse 40% 40%
         at 80% 20%,
         rgba(123, 47, 255, 0.05) 0%,
         transparent 60%),
-        radial-gradient(
-        ellipse 40% 40%
+        radial-gradient(ellipse 40% 40%
         at 20% 80%,
         rgba(0, 212, 255, 0.05) 0%,
         transparent 60%);
 }
 
-/* Animated Grid */
 .hero-grid {
     position: absolute;
     inset: 0;
@@ -210,8 +202,7 @@ body {
         linear-gradient(
         rgba(0, 212, 255, 0.03)
         1px, transparent 1px),
-        linear-gradient(
-        90deg,
+        linear-gradient(90deg,
         rgba(0, 212, 255, 0.03)
         1px, transparent 1px);
     background-size: 50px 50px;
@@ -236,7 +227,8 @@ body {
     align-items: center;
     gap: 8px;
     background: rgba(0, 212, 255, 0.08);
-    border: 1px solid rgba(0, 212, 255, 0.2);
+    border: 1px solid
+    rgba(0, 212, 255, 0.2);
     color: var(--accent-cyan);
     padding: 8px 20px;
     border-radius: 50px;
@@ -261,8 +253,7 @@ body {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 16px;
-    animation: fadeInUp 0.8s ease 0.2s
-    both;
+    animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .hero-name span {
@@ -277,8 +268,7 @@ body {
     color: var(--text-secondary);
     font-weight: 400;
     margin-bottom: 20px;
-    animation: fadeInUp 0.8s ease 0.3s
-    both;
+    animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 .hero-tagline strong {
@@ -292,8 +282,7 @@ body {
     max-width: 580px;
     margin: 0 auto 36px;
     line-height: 1.8;
-    animation: fadeInUp 0.8s ease 0.4s
-    both;
+    animation: fadeInUp 0.8s ease 0.4s both;
 }
 
 .hero-buttons {
@@ -302,8 +291,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 48px;
-    animation: fadeInUp 0.8s ease 0.5s
-    both;
+    animation: fadeInUp 0.8s ease 0.5s both;
 }
 
 .btn-primary {
@@ -355,13 +343,10 @@ body {
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    animation: fadeInUp 0.8s ease 0.6s
-    both;
+    animation: fadeInUp 0.8s ease 0.6s both;
 }
 
-.stat-item {
-    text-align: center;
-}
+.stat-item { text-align: center; }
 
 .stat-number {
     font-size: 28px;
@@ -383,9 +368,7 @@ body {
 /* ==================
    SECTION BASE
    ================== */
-section {
-    padding: 80px 24px;
-}
+section { padding: 80px 24px; }
 
 .section-container {
     max-width: 1200px;
@@ -431,9 +414,7 @@ section {
 /* ==================
    ABOUT SECTION
    ================== */
-.about {
-    background: var(--bg-secondary);
-}
+.about { background: var(--bg-secondary); }
 
 .about-grid {
     display: grid;
@@ -608,7 +589,8 @@ section {
 
 .skill-tag {
     background: rgba(0, 212, 255, 0.06);
-    border: 1px solid rgba(0, 212, 255, 0.15);
+    border: 1px solid
+    rgba(0, 212, 255, 0.15);
     color: var(--accent-cyan);
     padding: 5px 12px;
     border-radius: 6px;
@@ -624,106 +606,181 @@ section {
 }
 
 /* ==================
-   PROJECTS SECTION
+   PROJECT CARDS CSS
    ================== */
 .projects {
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
 }
 
-.projects-coming-soon {
-    text-align: center;
-    padding: 80px 40px;
+.projects-grid {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit,
+    minmax(350px, 1fr));
+    gap: 32px;
+}
+
+.project-card {
     background: var(--gradient-card);
     border: 1px solid var(--border-color);
-    border-radius: 24px;
-    position: relative;
+    border-radius: 20px;
     overflow: hidden;
+    transition: var(--transition);
+    position: relative;
 }
 
-.projects-coming-soon::before {
+.project-card::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    border-radius: 26px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
     background: var(--gradient-main);
-    z-index: -1;
-    opacity: 0.15;
+    z-index: 1;
 }
 
-.coming-soon-icon {
-    font-size: 64px;
-    margin-bottom: 24px;
-    display: block;
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgba(0, 212, 255, 0.3);
 }
 
-.projects-coming-soon h3 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    background: var(--gradient-main);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.project-video-wrapper {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #000000;
 }
 
-.projects-coming-soon p {
-    color: var(--text-secondary);
-    font-size: 15px;
-    max-width: 500px;
-    margin: 0 auto 32px;
-    line-height: 1.8;
+.project-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.coming-soon-tools {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 32px;
+.project-card-body {
+    padding: 24px;
 }
 
-.coming-soon-tool {
-    background: rgba(0, 212, 255, 0.08);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    color: var(--accent-cyan);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.coming-soon-progress {
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-.progress-label {
+.project-card-header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.project-card-description {
+    color: var(--text-secondary);
     font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 8px;
+    line-height: 1.7;
+    margin-bottom: 16px;
 }
 
-.progress-bar {
-    height: 6px;
-    background: var(--border-color);
-    border-radius: 3px;
-    overflow: hidden;
+.project-card-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
 }
 
-.progress-fill {
-    height: 100%;
+.project-card-tools span {
+    background: rgba(0, 212, 255, 0.06);
+    border: 1px solid
+    rgba(0, 212, 255, 0.2);
+    color: var(--accent-cyan);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: 'Fira Code', monospace;
+}
+
+.project-highlights {
+    margin-bottom: 16px;
+}
+
+.project-highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.project-highlight-item::before {
+    content: '→';
+    color: var(--accent-cyan);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.project-card-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.project-btn-primary {
     background: var(--gradient-main);
-    border-radius: 3px;
-    width: 65%;
-    animation: progressLoad 2s ease
-    1s both;
+    color: white;
 }
 
-@keyframes progressLoad {
-    from { width: 0; }
-    to   { width: 65%; }
+.project-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px
+    rgba(0, 128, 255, 0.4);
+}
+
+.project-btn-secondary {
+    background: transparent;
+    color: var(--accent-cyan);
+    border: 1px solid
+    rgba(0, 212, 255, 0.4);
+}
+
+.project-btn-secondary:hover {
+    background: rgba(0, 212, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.project-number {
+    font-size: 11px;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    background: rgba(0, 212, 255, 0.08);
+    padding: 3px 8px;
+    border-radius: 4px;
 }
 
 /* ==================
@@ -942,7 +999,8 @@ section {
    ================== */
 footer {
     background: var(--bg-primary);
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid
+    var(--border-color);
     padding: 32px 24px;
     text-align: center;
 }
@@ -1049,6 +1107,10 @@ footer span {
     .education-card {
         flex-direction: column;
     }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 </style>
@@ -1067,27 +1129,12 @@ footer span {
         </a>
 
         <ul class="nav-links" id="navLinks">
-            <li>
-                <a href="#home">Home</a>
-            </li>
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#projects">
-                Projects</a>
-            </li>
-            <li>
-                <a href="#education">
-                Education</a>
-            </li>
-            <li>
-                <a href="#contact">
-                Contact</a>
-            </li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 
         <div class="hamburger"
@@ -1134,8 +1181,8 @@ footer span {
 
         <p class="hero-description">
             Data Science student at
-            <strong
-            style="color:var(--accent-cyan)">
+            <strong style="color:
+            var(--accent-cyan)">
             IIT Madras</strong>
             passionate about turning
             raw data into actionable
@@ -1150,14 +1197,14 @@ footer span {
         <div class="hero-buttons">
             <a href="#projects"
             class="btn-primary">
-                <i class="fas
-                fa-chart-bar"></i>
+                <i class="fas fa-chart-bar">
+                </i>
                 View Projects
             </a>
             <a href="#contact"
             class="btn-secondary">
-                <i class="fas
-                fa-envelope"></i>
+                <i class="fas fa-envelope">
+                </i>
                 Contact Me
             </a>
         </div>
@@ -1198,14 +1245,12 @@ footer span {
 <section class="about" id="about">
     <div class="section-container">
 
-        <div class="section-header
-        fade-in">
+        <div class="section-header fade-in">
             <span class="section-tag">
             Get To Know Me</span>
             <h2 class="section-title">
             About <span>Me</span></h2>
-            <div class="section-line">
-            </div>
+            <div class="section-line"></div>
         </div>
 
         <div class="about-grid">
@@ -1223,39 +1268,34 @@ footer span {
                 </div>
             </div>
 
-            <div class="about-content
-            fade-in">
+            <div class="about-content fade-in">
                 <h3>
                     Turning Data into
                     <span>Insights</span>
                 </h3>
-
                 <p>
                     I am
                     <strong>Uday Kumar Saroj</strong>,
                     a passionate
                     <strong>Data Analyst</strong>
                     and Data Science student
-                    at
-                    <strong>IIT Madras</strong>.
+                    at <strong>IIT Madras</strong>.
                     I specialize in transforming
                     complex raw datasets into
                     clear, actionable business
                     insights that drive
                     real decisions.
                 </p>
-
                 <p>
                     My expertise spans the
                     complete analytics pipeline
-                    — from data collection and
+                    from data collection and
                     cleaning to statistical
                     analysis, machine learning
                     modeling, SQL querying, and
                     interactive Power BI
                     dashboard creation.
                 </p>
-
                 <p>
                     I am actively building
                     my portfolio with
@@ -1264,8 +1304,7 @@ footer span {
                     skills in AI, ML, and
                     Business Analytics.
                     Open to
-                    <strong
-                    style="color:
+                    <strong style="color:
                     var(--accent-cyan)">
                     Data Analyst</strong>,
                     Business Analyst, and
@@ -1290,12 +1329,10 @@ footer span {
                         Open to Work
                     </div>
                     <div class="about-info-item">
-                        <i class="fas
-                        fa-code"></i>
+                        <i class="fas fa-code"></i>
                         Python | SQL | Power BI
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -1307,27 +1344,22 @@ footer span {
 <section class="skills" id="skills">
     <div class="section-container">
 
-        <div class="section-header
-        fade-in">
+        <div class="section-header fade-in">
             <span class="section-tag">
             What I Work With</span>
             <h2 class="section-title">
             Technical <span>Skills</span>
             </h2>
-            <div class="section-line">
-            </div>
+            <div class="section-line"></div>
         </div>
 
         <div class="skills-grid">
 
-            <div class="skill-category
-            fade-in">
+            <div class="skill-category fade-in">
                 <div class="skill-category-icon">
                     <i class="fas fa-code"></i>
                 </div>
-                <h3>
-                Languages and Tools
-                </h3>
+                <h3>Languages and Tools</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">
                     Python</span>
@@ -1344,15 +1376,12 @@ footer span {
                 </div>
             </div>
 
-            <div class="skill-category
-            fade-in">
+            <div class="skill-category fade-in">
                 <div class="skill-category-icon">
-                    <i class="fas
-                    fa-chart-pie"></i>
+                    <i class="fas fa-chart-pie">
+                    </i>
                 </div>
-                <h3>
-                Data Visualization
-                </h3>
+                <h3>Data Visualization</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">
                     Power BI</span>
@@ -1367,15 +1396,11 @@ footer span {
                 </div>
             </div>
 
-            <div class="skill-category
-            fade-in">
+            <div class="skill-category fade-in">
                 <div class="skill-category-icon">
-                    <i class="fas
-                    fa-brain"></i>
+                    <i class="fas fa-brain"></i>
                 </div>
-                <h3>
-                Machine Learning
-                </h3>
+                <h3>Machine Learning</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">
                     Scikit-Learn</span>
@@ -1390,15 +1415,12 @@ footer span {
                 </div>
             </div>
 
-            <div class="skill-category
-            fade-in">
+            <div class="skill-category fade-in">
                 <div class="skill-category-icon">
-                    <i class="fas
-                    fa-database"></i>
+                    <i class="fas fa-database">
+                    </i>
                 </div>
-                <h3>
-                Data Analytics
-                </h3>
+                <h3>Data Analytics</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">
                     Pandas</span>
@@ -1425,60 +1447,314 @@ footer span {
 <section class="projects" id="projects">
     <div class="section-container">
 
-        <div class="section-header
-        fade-in">
+        <div class="section-header fade-in">
             <span class="section-tag">
             My Work</span>
             <h2 class="section-title">
             Featured <span>Projects</span>
             </h2>
-            <div class="section-line">
-            </div>
+            <div class="section-line"></div>
         </div>
 
-        <div class="projects-coming-soon
-        fade-in">
-            <span class="coming-soon-icon">
-            🚀</span>
-            <h3>
-            Projects Coming Soon!
-            </h3>
-            <p>
-                I am currently working on
-                exciting data analytics
-                projects using Python, SQL,
-                PostgreSQL, and Power BI.
-                Check back soon to see
-                my complete project
-                portfolio with live
-                dashboards and detailed
-                case studies.
-            </p>
-            <div class="coming-soon-tools">
-                <span class="coming-soon-tool">
-                Python</span>
-                <span class="coming-soon-tool">
-                SQL</span>
-                <span class="coming-soon-tool">
-                PostgreSQL</span>
-                <span class="coming-soon-tool">
-                Power BI</span>
-                <span class="coming-soon-tool">
-                Machine Learning</span>
-                <span class="coming-soon-tool">
-                A/B Testing</span>
-            </div>
-            <div class="coming-soon-progress">
-                <div class="progress-label">
-                    <span>Portfolio Progress</span>
-                    <span>65%</span>
+        <div class="projects-grid">
+
+            <!-- ========================
+                 PROJECT 1 — SNAKE GAME
+                 ======================== -->
+            <div class="project-card fade-in">
+
+                <div class="project-video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/xRSC2nUAOOs"
+                        title="Snake Game Python Project"
+                        frameborder="0"
+                        allow="accelerometer;
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        gyroscope;
+                        picture-in-picture;
+                        web-share"
+                        allowfullscreen>
+                    </iframe>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress-fill">
+
+                <div class="project-card-body">
+
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">
+                            Snake Game
+                        </h3>
+                        <span class="project-number">
+                            01
+                        </span>
                     </div>
+
+                    <div class="project-card-tools">
+                        <span>Python</span>
+                        <span>Pygame</span>
+                        <span>OOP</span>
+                        <span>Game Logic</span>
+                    </div>
+
+                    <p class="project-card-description">
+                        Built a fully functional
+                        Snake Game using Python
+                        and Pygame library.
+                        Implemented game logic,
+                        collision detection,
+                        score tracking, and
+                        smooth animation using
+                        Object Oriented
+                        Programming concepts.
+                    </p>
+
+                    <div class="project-highlights">
+                        <div class="project-highlight-item">
+                            Built complete game
+                            loop with smooth
+                            60 FPS animation
+                        </div>
+                        <div class="project-highlight-item">
+                            Implemented collision
+                            detection for walls
+                            and self collision
+                        </div>
+                        <div class="project-highlight-item">
+                            Real-time score
+                            tracking and
+                            high score system
+                        </div>
+                        <div class="project-highlight-item">
+                            Clean OOP design
+                            with separate classes
+                            for Snake and Food
+                        </div>
+                    </div>
+
+                    <div class="project-card-links">
+                        <a href="https://github.com/Uday020505"
+                        target="_blank"
+                        class="project-btn
+                        project-btn-primary">
+                            <i class="fab
+                            fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="https://youtu.be/xRSC2nUAOOs"
+                        target="_blank"
+                        class="project-btn
+                        project-btn-secondary">
+                            <i class="fas
+                            fa-play"></i>
+                            Watch Demo
+                        </a>
+                    </div>
+
                 </div>
             </div>
+            <!-- END PROJECT 1 -->
+
+            <!-- ==============================
+                 PROJECT 2 — SMART TEXT
+                 ANALYZER
+                 ============================== -->
+            <div class="project-card fade-in">
+
+                <div class="project-video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/WwAyndbAyJ8"
+                        title="Smart Text Analyzer Project"
+                        frameborder="0"
+                        allow="accelerometer;
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        gyroscope;
+                        picture-in-picture;
+                        web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="project-card-body">
+
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">
+                            Smart Text Analyzer
+                        </h3>
+                        <span class="project-number">
+                            02
+                        </span>
+                    </div>
+
+                    <div class="project-card-tools">
+                        <span>Python</span>
+                        <span>NLP</span>
+                        <span>Text Mining</span>
+                        <span>Tkinter</span>
+                    </div>
+
+                    <p class="project-card-description">
+                        Built a Smart Text Analyzer
+                        tool that processes and
+                        analyzes text data using
+                        Natural Language Processing
+                        techniques. Extracts key
+                        insights such as word
+                        frequency, sentiment,
+                        and readability metrics
+                        from raw text input.
+                    </p>
+
+                    <div class="project-highlights">
+                        <div class="project-highlight-item">
+                            Real-time text processing
+                            with NLP techniques
+                        </div>
+                        <div class="project-highlight-item">
+                            Word frequency and
+                            keyword extraction
+                            analysis
+                        </div>
+                        <div class="project-highlight-item">
+                            Sentiment analysis
+                            and readability
+                            scoring
+                        </div>
+                        <div class="project-highlight-item">
+                            Clean GUI built
+                            with Tkinter for
+                            easy interaction
+                        </div>
+                    </div>
+
+                    <div class="project-card-links">
+                        <a href="https://github.com/Uday020505"
+                        target="_blank"
+                        class="project-btn
+                        project-btn-primary">
+                            <i class="fab
+                            fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="https://youtu.be/WwAyndbAyJ8"
+                        target="_blank"
+                        class="project-btn
+                        project-btn-secondary">
+                            <i class="fas
+                            fa-play"></i>
+                            Watch Demo
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END PROJECT 2 -->
+
+            <!-- ==============================
+                 PROJECT 3 — STUDENT
+                 PERFORMANCE ANALYZER
+                 ============================== -->
+            <div class="project-card fade-in">
+
+                <div class="project-video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/_J4mUlM8fAE"
+                        title="Student Performance Analyzer"
+                        frameborder="0"
+                        allow="accelerometer;
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        gyroscope;
+                        picture-in-picture;
+                        web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="project-card-body">
+
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">
+                            Student Performance
+                            Analyzer
+                        </h3>
+                        <span class="project-number">
+                            03
+                        </span>
+                    </div>
+
+                    <div class="project-card-tools">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                        <span>EDA</span>
+                    </div>
+
+                    <p class="project-card-description">
+                        Developed a Student
+                        Performance Analyzer
+                        that performs end-to-end
+                        exploratory data analysis
+                        on student academic data.
+                        Identifies key factors
+                        affecting performance
+                        and visualizes trends
+                        through interactive charts.
+                    </p>
+
+                    <div class="project-highlights">
+                        <div class="project-highlight-item">
+                            Full EDA pipeline on
+                            real student
+                            dataset records
+                        </div>
+                        <div class="project-highlight-item">
+                            Identified key
+                            performance factors
+                            using correlation
+                            analysis
+                        </div>
+                        <div class="project-highlight-item">
+                            Visual dashboards
+                            with Matplotlib
+                            and Seaborn charts
+                        </div>
+                        <div class="project-highlight-item">
+                            Grade distribution
+                            and subject-wise
+                            performance insights
+                        </div>
+                    </div>
+
+                    <div class="project-card-links">
+                        <a href="https://github.com/Uday020505"
+                        target="_blank"
+                        class="project-btn
+                        project-btn-primary">
+                            <i class="fab
+                            fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="https://youtu.be/_J4mUlM8fAE"
+                        target="_blank"
+                        class="project-btn
+                        project-btn-secondary">
+                            <i class="fas
+                            fa-play"></i>
+                            Watch Demo
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END PROJECT 3 -->
+
         </div>
+        <!-- END projects-grid -->
 
     </div>
 </section>
@@ -1486,23 +1762,19 @@ footer span {
 <!-- ==================
      EDUCATION SECTION
      ================== -->
-<section class="education"
-id="education">
+<section class="education" id="education">
     <div class="section-container">
 
-        <div class="section-header
-        fade-in">
+        <div class="section-header fade-in">
             <span class="section-tag">
             Academic Background</span>
             <h2 class="section-title">
             My <span>Education</span>
             </h2>
-            <div class="section-line">
-            </div>
+            <div class="section-line"></div>
         </div>
 
-        <div class="education-card
-        fade-in">
+        <div class="education-card fade-in">
             <div class="education-icon">
                 🎓
             </div>
@@ -1545,24 +1817,20 @@ id="education">
 <section class="contact" id="contact">
     <div class="section-container">
 
-        <div class="section-header
-        fade-in">
+        <div class="section-header fade-in">
             <span class="section-tag">
             Get In Touch</span>
             <h2 class="section-title">
             Contact <span>Me</span>
             </h2>
-            <div class="section-line">
-            </div>
+            <div class="section-line"></div>
         </div>
 
         <div class="contact-grid">
 
-            <div class="contact-info
-            fade-in">
+            <div class="contact-info fade-in">
                 <h3>
-                Let us
-                <span>Connect!</span>
+                Let us <span>Connect!</span>
                 </h3>
                 <p>
                     I am actively looking for
@@ -1571,15 +1839,14 @@ id="education">
                     internship and job
                     opportunities.
                     Feel free to reach out
-                    — I would love to connect
+                    and I would love to connect
                     and discuss how I can
                     contribute to your team!
                 </p>
 
                 <div class="contact-links">
 
-                    <a href="mailto:
-                    udaysaroj001@gmail.com"
+                    <a href="mailto:udaysaroj001@gmail.com"
                     class="contact-link">
                         <div class="contact-link-icon">
                             <i class="fas
@@ -1601,13 +1868,12 @@ id="education">
                         </div>
                         <div class="contact-link-text">
                             <strong>Call Me</strong>
-                            <span>+91 8009553551</span>
+                            <span>
+                            +91 8009553551</span>
                         </div>
                     </a>
 
-                    <a href="
-                    https://www.linkedin.com/in/
-                    uday-kumar-saroj-383611351/"
+                    <a href="https://www.linkedin.com/in/uday-kumar-saroj-383611351/"
                     target="_blank"
                     class="contact-link">
                         <div class="contact-link-icon">
@@ -1617,28 +1883,24 @@ id="education">
                         <div class="contact-link-text">
                             <strong>LinkedIn</strong>
                             <span>
-                            Connect with me
-                            </span>
+                            Connect with me</span>
                         </div>
                     </a>
 
                 </div>
             </div>
 
-            <div class="contact-social
-            fade-in">
+            <div class="contact-social fade-in">
                 <h3>Find Me Online</h3>
                 <div class="social-grid">
 
-                    <a href="
-                    https://www.linkedin.com/in/
-                    uday-kumar-saroj-383611351/"
+                    <a href="https://www.linkedin.com/in/uday-kumar-saroj-383611351/"
                     target="_blank"
                     class="social-card">
                         <i class="fab
                         fa-linkedin"
-                        style="color:#0077b5">
-                        </i>
+                        style="color:
+                        #0077b5"></i>
                         <div class="social-card-text">
                             <strong>LinkedIn</strong>
                             <span>
@@ -1647,29 +1909,26 @@ id="education">
                         </div>
                     </a>
 
-                    <a href="
-                    https://github.com/Uday020505"
+                    <a href="https://github.com/Uday020505"
                     target="_blank"
                     class="social-card">
                         <i class="fab
                         fa-github"
-                        style="color:#ffffff">
-                        </i>
+                        style="color:
+                        #ffffff"></i>
                         <div class="social-card-text">
                             <strong>GitHub</strong>
                             <span>
-                            View My Code
-                            </span>
+                            View My Code</span>
                         </div>
                     </a>
 
-                    <a href="mailto:
-                    udaysaroj001@gmail.com"
+                    <a href="mailto:udaysaroj001@gmail.com"
                     class="social-card">
                         <i class="fas
                         fa-envelope"
-                        style="color:#ea4335">
-                        </i>
+                        style="color:
+                        #ea4335"></i>
                         <div class="social-card-text">
                             <strong>Email</strong>
                             <span>
@@ -1680,16 +1939,14 @@ id="education">
 
                     <a href="tel:8009553551"
                     class="social-card">
-                        <i class="fas
-                        fa-phone"
+                        <i class="fas fa-phone"
                         style="color:
                         var(--accent-cyan)">
                         </i>
                         <div class="social-card-text">
                             <strong>Phone</strong>
                             <span>
-                            +91 8009553551
-                            </span>
+                            +91 8009553551</span>
                         </div>
                     </a>
 
@@ -1707,16 +1964,14 @@ id="education">
     <p>
         Designed and Built by
         <span>Uday Kumar Saroj</span>
-        | Data Analyst |
-        IIT Madras
+        | Data Analyst | IIT Madras
         <br>
         <small style="color:
         var(--text-muted);
         margin-top:8px;
         display:block">
-            Python • SQL •
-            PostgreSQL • Power BI •
-            Machine Learning
+            Python • SQL • PostgreSQL
+            • Power BI • Machine Learning
         </small>
     </p>
 </footer>
@@ -1726,14 +1981,12 @@ id="education">
      ================== -->
 <script>
 
-// Mobile Menu Toggle
 function toggleMenu() {
     const navLinks =
     document.getElementById('navLinks');
     navLinks.classList.toggle('open');
 }
 
-// Close menu on link click
 document.querySelectorAll(
 '.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
@@ -1742,7 +1995,6 @@ document.querySelectorAll(
     });
 });
 
-// Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar =
     document.getElementById('navbar');
@@ -1756,7 +2008,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Scroll Fade In Animation
 const observer =
 new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1770,22 +2021,23 @@ new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in')
 .forEach(el => observer.observe(el));
 
-// Active nav link on scroll
 const sections =
 document.querySelectorAll('section');
-const navLinks =
+const navLinksAll =
 document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
+        const sectionTop =
+        section.offsetTop;
         if (window.scrollY >=
         sectionTop - 100) {
-            current = section.getAttribute('id');
+            current =
+            section.getAttribute('id');
         }
     });
-    navLinks.forEach(link => {
+    navLinksAll.forEach(link => {
         link.style.color = '';
         if (link.getAttribute('href') ===
         '#' + current) {
